@@ -1,13 +1,23 @@
 # Forking for External Contributors
 
+## ⚠️ NOT For CommitEd Team Members!
+
+**If you're part of the CommitEd team with direct repository access:**
+- ❌ DO NOT fork
+- ✅ Use branches instead (see `01-collaboration-basics.md`)
+- ✅ Work directly on the main repository
+- ✅ Your work is: feature/<service>/<description> branches
+
+This guide is for **external contributors** to open-source projects, not for your team.
+
 ## When to Fork
 
 You fork a repository when:
-- You don't have write access
-- You want to contribute to open-source projects
-- You want a personal copy to experiment with
+- You don't have write access to the main repository
+- You want to contribute to someone else's open-source project
+- You're working on a completely separate version
 
-**For team members with repository access**, you don't need to fork - use branches instead (see `01-collaboration-basics.md`).
+**For CommitEd team members** (you have write access), skip this guide and use the collaboration workflow in `01-collaboration-basics.md`.
 
 ## Forking Workflow
 

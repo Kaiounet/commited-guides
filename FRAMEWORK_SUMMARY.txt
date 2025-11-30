@@ -1,0 +1,446 @@
+═══════════════════════════════════════════════════════════════════════════════
+  COMMITED ACADEMIC FRAMEWORK - COMPLETE DELIVERABLE
+  Software Architect's Guide System for Student Teams
+═══════════════════════════════════════════════════════════════════════════════
+
+ROLE: Software Architect Supervising Academic Project Teams
+
+CREATED: 10 New Comprehensive Guides + README Update
+
+PURPOSE: Teach real software engineering through guided framework
+
+═══════════════════════════════════════════════════════════════════════════════
+  NEW GUIDES (10 FILES)
+═══════════════════════════════════════════════════════════════════════════════
+
+GIT/ SECTION (2 new files):
+  04-common-mistakes.md .......... Git error recovery guide
+                                 Topics: Undoing commits, merge conflicts,
+                                 stashed changes, lost commits, best practices
+                                 Length: ~4,000 words
+
+  05-team-workflow.md ........... Day-to-day team development patterns
+                                 Topics: Morning routine, parallel development,
+                                 PR handling, release process, checklists
+                                 Length: ~4,900 words
+
+GITHUB/ SECTION (4 new files):
+  04-academic-workflow.md ....... Issue management and academic collaboration
+                                 Topics: Issue creation, labels, PR etiquette,
+                                 reviewer/author perspectives, scenarios
+                                 Length: ~6,100 words
+
+  05-academic-requirements.md ... Deliverables, grading, repository setup
+                                 Topics: Project structure, branch protection,
+                                 sprint artifacts, grading criteria, final
+                                 deliverables, troubleshooting
+                                 Length: ~7,150 words
+
+  06-quick-reference.md ......... Daily cheat sheet for developers
+                                 Topics: Commands, checklists, common scenarios,
+                                 templates, troubleshooting, resources
+                                 Length: ~6,850 words
+
+  07-instructors-guide.md ....... Complete guide for course instructors
+                                 Topics: Repository setup, sprint management,
+                                 code review, evaluation rubrics, grading examples,
+                                 intervention strategies
+                                 Length: ~11,000 words
+
+SCRUM/ SECTION (2 new files):
+  04-sprint-mechanics.md ........ Complete sprint cycle walkthrough
+                                 Topics: Sprint planning, daily standups,
+                                 velocity tracking, reviews, retrospectives,
+                                 common issues, team roles
+                                 Length: ~7,250 words
+
+  05-team-coordination.md ....... Team communication and dynamics
+                                 Topics: Communication channels, conflict
+                                 resolution, decision making, documentation
+                                 standards, onboarding, red flags
+                                 Length: ~5,300 words
+
+TYPST/ SECTION (1 new file):
+  07-technical-docs.typ ........ Technical documentation with Typst
+                                 Topics: Document structure, API docs,
+                                 architecture docs, code examples, team workflow
+                                 Length: ~7,150 words
+
+TOP-LEVEL (1 updated file):
+  README.md ....................... Comprehensive guide index
+                                  Topics: Quick start, branch strategy,
+                                  daily workflows, role-based reading,
+                                  troubleshooting, setup guide
+                                  Length: ~3,500 words
+
+TOTAL NEW CONTENT: ~60,000+ words of comprehensive guidance
+
+═══════════════════════════════════════════════════════════════════════════════
+  ARCHITECTURE & DESIGN
+═══════════════════════════════════════════════════════════════════════════════
+
+BRANCH STRATEGY:
+  main         ← Production releases (stable, reviewed)
+   ↑ PR when ready to release
+  dev          ← Development integration (team converges)
+   ↑ PRs from feature branches
+  feature/*    ← Individual work (isolated until ready)
+  fix/*        ← Bug fixes
+  docs/*       ← Documentation
+  hotfix/*     ← Emergency production fixes
+
+SPRINT CYCLE (1-week example):
+  Monday:    Sprint Planning (1.5-2 hours)
+             - PO presents priorities
+             - Team estimates (story points)
+             - Sprint goal defined
+             - Issues created & assigned
+
+  Tue-Thu:   Development Phase
+             - Daily 10-minute standups
+             - Individual work on features
+             - PRs created and reviewed
+             - Merges to dev when approved
+
+  Friday:    Sprint Ceremonies (1.5 hours)
+             - 1 hour: Sprint Review (demo & feedback)
+             - 45 min: Retrospective (improve process)
+
+  Next Week: Repeat
+
+GRADING BREAKDOWN:
+  Code Quality ....... 40% (compiles, standards, error handling, tests)
+  Collaboration ...... 30% (commits, PRs, standups, teamwork)
+  Documentation ..... 20% (README, architecture, API, comments)
+  Deliverables ....... 10% (features work, demo ready)
+
+═══════════════════════════════════════════════════════════════════════════════
+  KEY FEATURES & COMPONENTS
+═══════════════════════════════════════════════════════════════════════════════
+
+FOR DEVELOPERS:
+  ✓ Daily workflow patterns (morning, during day, before PR)
+  ✓ Git error recovery guide (10+ common mistakes with solutions)
+  ✓ Quick reference cheat sheet (commands, templates, scenarios)
+  ✓ Common scenarios handled (blocked, rejected PR, conflicts, etc.)
+
+FOR INSTRUCTORS:
+  ✓ Complete setup guide (repository, branch protection, team access)
+  ✓ Sprint management templates (planning, review, retrospective)
+  ✓ Evaluation rubrics (with grading examples: A/B/C/F)
+  ✓ Intervention strategies (green/yellow/red flags)
+  ✓ Onboarding email template for students
+
+FOR TEAMS:
+  ✓ Sprint mechanics explained (planning, standups, reviews, retros)
+  ✓ Scrum roles defined (Product Owner, Scrum Master, Development Team)
+  ✓ Communication channels documented (standups, Slack, GitHub, async)
+  ✓ Team coordination guidelines (conflict resolution, decision making)
+  ✓ Onboarding process for new members
+
+FOR DOCUMENTATION:
+  ✓ Typst technical documentation guide
+  ✓ Documentation standards and examples
+  ✓ API, architecture, database schema examples
+  ✓ Integration with code (docs reviewed like code)
+
+═══════════════════════════════════════════════════════════════════════════════
+  STUDENT LEARNING PATH
+═══════════════════════════════════════════════════════════════════════════════
+
+DAY 1 (2 hours):
+  1. Read README.md (5 min)
+  2. Read git/01-basics.md (15 min)
+  3. Read github/01-collaboration-basics.md (15 min)
+  4. Clone repo, first branch, first commit (30 min)
+  5. Create first PR (30 min)
+  6. Read scrum/04-sprint-mechanics.md (20 min)
+
+WEEK 1:
+  ✓ Git basics and branching
+  ✓ GitHub PR workflow
+  ✓ Commit message standards
+  ✓ Code review process
+  ✓ Multiple PRs created and reviewed
+
+WEEK 2:
+  ✓ Sprint planning with team
+  ✓ Story point estimation
+  ✓ Sprint mechanics (standups, review, retro)
+  ✓ Velocity tracking
+
+WEEKS 3-N:
+  ✓ Efficient collaboration
+  ✓ Complex feature development
+  ✓ Architecture decisions
+  ✓ Release management
+  ✓ Professional practices
+
+OUTCOME:
+  → Industry-ready software engineers
+  → Understand real development workflow
+  → Can contribute to professional teams
+
+═══════════════════════════════════════════════════════════════════════════════
+  METRICS & TRACKING
+═══════════════════════════════════════════════════════════════════════════════
+
+WEEKLY METRICS:
+  • Commits per person (should be regular, not bursty)
+  • PRs created vs merged (backlog indicates bottleneck)
+  • Code review response time (should be <24 hours)
+  • Standup attendance (should be 100%)
+
+PER SPRINT:
+  • Velocity in story points (tracks team capacity)
+  • Sprint goal met (yes/no)
+  • Test coverage percentage (target: 70%+)
+  • Merge conflicts (fewer is better)
+  • Documentation updates
+
+END OF SEMESTER:
+  • Total commits per person (goal: 100+)
+  • Git history quality (focused, clear, regular)
+  • Test coverage (goal: 70%+)
+  • Documentation completeness
+  • Team morale survey
+
+═══════════════════════════════════════════════════════════════════════════════
+  INSTRUCTOR SETUP CHECKLIST
+═══════════════════════════════════════════════════════════════════════════════
+
+Week 0 (Before Students Start):
+  □ Create GitHub repository
+  □ Create dev branch from main
+  □ Add branch protection rules to main & dev
+  □ Add team members with appropriate permissions
+  □ Copy CommitEd guides into repo
+  □ Create CONTRIBUTING.md from template
+
+Week 1 (Kickoff):
+  □ Send onboarding email to students
+  □ Have students clone and read guides
+  □ First sprint planning session
+  □ Assign first batch of issues/tasks
+  □ Setup daily standup meeting time
+  □ Create GitHub project board
+
+Week 2+:
+  □ Daily standups (10 minutes)
+  □ Monitor PRs and reviews
+  □ Track velocity per sprint
+  □ Help with blockers
+  □ Provide feedback on code quality
+
+Mid-Semester Review:
+  □ Check 50+ commits per person
+  □ Verify git workflow understood
+  □ Review test coverage trend
+  □ Check documentation progress
+  □ One-on-one with struggling students
+
+End of Semester:
+  □ Final sprint and demo
+  □ Tag final release
+  □ Archive repository
+  □ Collect student feedback
+  □ Reflect on what worked/didn't
+
+═══════════════════════════════════════════════════════════════════════════════
+  RED FLAGS TO MONITOR
+═══════════════════════════════════════════════════════════════════════════════
+
+🟢 GREEN (Healthy Team):
+   • Commits happening regularly
+   • PRs being created and reviewed
+   • Tests passing
+   • Standups happening
+   • Velocity stable
+   ACTION: Let them work, attend standups
+
+🟡 YELLOW (Needs Attention):
+   • No commits for 3+ days
+   • PR reviews taking >48 hours
+   • Standups skipped
+   • Same person blocked repeatedly
+   • Uneven workload distribution
+   ACTION: Discuss in standup, help with blockers
+
+🔴 RED (Critical):
+   • No activity for 1+ week
+   • Major conflict or drama
+   • Cheating suspected
+   • Someone completely absent
+   • Production branch broken
+   ACTION: Meet with team/individual immediately
+
+═══════════════════════════════════════════════════════════════════════════════
+  WHAT INSTRUCTORS GET
+═══════════════════════════════════════════════════════════════════════════════
+
+From github/07-instructors-guide.md:
+
+✓ Complete repository setup guide
+✓ Sprint planning templates & agendas
+✓ Sprint review agenda
+✓ Retrospective format
+✓ Student onboarding email template
+✓ Grading rubrics (40-30-20-10 breakdown)
+✓ Evaluation examples (A/B/C/F grades)
+✓ Common student issues & solutions
+✓ Intervention strategies for problems
+✓ Metrics to track progress
+✓ Red flag indicators
+✓ End-of-semester checklist
+
+═══════════════════════════════════════════════════════════════════════════════
+  HOW TO USE THIS FRAMEWORK
+═══════════════════════════════════════════════════════════════════════════════
+
+FOR STUDENTS:
+  1. Start with README.md
+  2. Follow the recommended reading order for your role
+  3. Bookmark github/06-quick-reference.md
+  4. Reference guides as needed during project
+
+FOR INSTRUCTORS:
+  1. Read github/07-instructors-guide.md completely
+  2. Follow the setup checklist
+  3. Send onboarding email to students
+  4. Run sprints using provided templates
+  5. Use grading rubrics for evaluation
+
+FOR REVIEWERS:
+  1. Read github/04-academic-workflow.md
+  2. Follow the code review checklist
+  3. Leave constructive feedback
+  4. Help junior reviewers learn
+
+FOR NEW TEAM MEMBERS:
+  1. Day 1: Read README.md + git/01-basics.md
+  2. Day 2: Make first commit and PR
+  3. Week 1: Participate in standup and sprint
+  4. Ongoing: Reference guides as needed
+
+═══════════════════════════════════════════════════════════════════════════════
+  SUCCESS CRITERIA
+═══════════════════════════════════════════════════════════════════════════════
+
+By Mid-Semester:
+  ✓ 50+ commits per person
+  ✓ Git workflow understood and followed
+  ✓ PRs being created and reviewed
+  ✓ Tests written for features
+  ✓ Team velocity being tracked
+  ✓ Standups consistent
+
+By End of Semester:
+  ✓ 100+ commits per person
+  ✓ Complex features integrated to dev
+  ✓ 70%+ test coverage
+  ✓ Professional documentation complete
+  ✓ Stable dev and main branches
+  ✓ Production-ready release
+  ✓ Team can explain architecture
+  ✓ Demo impresses stakeholders
+
+═══════════════════════════════════════════════════════════════════════════════
+  QUICK START FOR INSTRUCTORS
+═══════════════════════════════════════════════════════════════════════════════
+
+1. Read: github/07-instructors-guide.md (30 minutes)
+2. Setup: Create repo and add guides (30 minutes)
+3. Prepare: Send onboarding email to students
+4. Kickoff: Sprint planning in week 2
+5. Manage: Daily standups, weekly metrics review
+6. Support: Help with blockers, feedback on PRs
+7. Evaluate: Use grading rubrics from guide
+
+═══════════════════════════════════════════════════════════════════════════════
+  FILES STRUCTURE
+═══════════════════════════════════════════════════════════════════════════════
+
+guides/
+├── README.md ........................ Comprehensive index & getting started
+├── FRAMEWORK_SUMMARY.txt ........... This file
+├── git/
+│   ├── 01-basics.md ................ Basic git commands
+│   ├── 02-commit-standards.md ...... Commit message format
+│   ├── 03-branching.md ............ Branch strategy
+│   ├── 04-common-mistakes.md [NEW] . Git error recovery
+│   └── 05-team-workflow.md [NEW] .. Daily team patterns
+├── github/
+│   ├── 01-collaboration-basics.md . First day on GitHub
+│   ├── 02-pull-requests.md ........ PR workflow
+│   ├── 03-forking.md .............. Fork-based workflow
+│   ├── 04-academic-workflow.md [NEW] Issues & collaboration
+│   ├── 05-academic-requirements.md [NEW] Deliverables & grading
+│   ├── 06-quick-reference.md [NEW] Daily cheat sheet
+│   └── 07-instructors-guide.md [NEW] Complete instructor guide
+├── scrum/
+│   ├── 01-sprints.md .............. Sprint basics
+│   ├── 02-user-stories.md ......... User stories
+│   ├── 03-backlog.md .............. Backlog management
+│   ├── 04-sprint-mechanics.md [NEW] Sprint cycle
+│   └── 05-team-coordination.md [NEW] Team communication
+└── typst/
+    ├── 01-basics.md ............... Typst basics
+    ├── 02-formatting.md ........... Text formatting
+    ├── 03-tables.md ............... Tables
+    ├── 04-code-blocks.md .......... Code blocks
+    ├── 05-images-figures.md ....... Images & figures
+    ├── 06-structure.md ............ Document structure
+    └── 07-technical-docs.typ [NEW] Technical documentation
+
+TOTAL: 25 guide files
+
+═══════════════════════════════════════════════════════════════════════════════
+  PHILOSOPHY & PEDAGOGY
+═══════════════════════════════════════════════════════════════════════════════
+
+This framework teaches REAL SOFTWARE ENGINEERING:
+
+❌ NOT: Solo programming in isolation
+✓ YES: Collaborative teamwork with code review
+
+❌ NOT: Cowboy code shipping fast
+✓ YES: Reviewed, tested code with quality standards
+
+❌ NOT: "Done when done" undefined scope
+✓ YES: Sprint-based planning with committed scope
+
+❌ NOT: Decisions made in whispers
+✓ YES: Documented decisions visible in git history
+
+❌ NOT: Panic debugging and crisis management
+✓ YES: Systematic problem-solving and prevention
+
+❌ NOT: Siloed individual work
+✓ YES: Continuous communication and collaboration
+
+By the end of the course, students will be ready for professional roles.
+
+═══════════════════════════════════════════════════════════════════════════════
+  CONTACT & SUPPORT
+═══════════════════════════════════════════════════════════════════════════════
+
+Questions? Start here:
+  1. README.md ...................... Overview & index
+  2. github/07-instructors-guide.md . Setup & management
+  3. github/06-quick-reference.md ... Daily help
+
+All guides include:
+  • Table of contents
+  • Clear examples
+  • Checklists
+  • Templates
+  • Troubleshooting
+
+═══════════════════════════════════════════════════════════════════════════════
+
+Version: 1.0
+Created: 2025-11-30
+Purpose: Academic software engineering education
+Status: Complete and ready to use
+
+═══════════════════════════════════════════════════════════════════════════════

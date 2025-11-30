@@ -6,7 +6,6 @@ A prioritized list of everything the project needs (features, bugs, improvements
 
 ## Structure
 
-```
 Priority | Item | Effort | Status
 ---------|------|--------|-------
 1 | User login system | M | Not Started
@@ -14,7 +13,7 @@ Priority | Item | Effort | Status
 3 | Grade tracking | M | Not Started
 4 | Email notifications | S | Not Started
 ...
-```
+
 
 ## How to Prioritize
 

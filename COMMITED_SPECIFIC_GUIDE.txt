@@ -1,0 +1,404 @@
+═══════════════════════════════════════════════════════════════════════════════
+  COMMITED PROJECT - YOUR PROFESSIONAL DEVELOPMENT FRAMEWORK
+═══════════════════════════════════════════════════════════════════════════════
+
+PROJECT NAME: CommitEd
+ARCHITECTURE: Microservices
+TEAM: Student developers learning professional practices
+
+═══════════════════════════════════════════════════════════════════════════════
+  COMMITED-SPECIFIC GUIDES (NEW!)
+═══════════════════════════════════════════════════════════════════════════════
+
+1. git/06-microservices-workflow.md ⭐ START HERE
+   ├─ CommitEd's microservices architecture
+   ├─ Services: auth, user, project, notification, api-gateway
+   ├─ Branch naming: feature/<service>/<description>
+   ├─ Commit scopes: feat(auth), fix(user), docs(api)
+   ├─ Local development with docker-compose
+   ├─ Versioning each service independently
+   ├─ Cross-service PR coordination
+   └─ Deployment order for dependencies
+
+2. github/08-issues-discussions.md ⭐ TASK MANAGEMENT
+   ├─ GitHub Issues for work tracking
+   ├─ Issue templates and best practices
+   ├─ Service labels: auth-service, user-service, etc.
+   ├─ GitHub Discussions for team conversations
+   ├─ Converting discussions to issues
+   ├─ Kanban board management
+   ├─ Linking PRs to issues (auto-close)
+   └─ CommitEd-specific examples
+
+3. github/07-semantic-versioning.md ⭐ RELEASES
+   ├─ What is semantic versioning (MAJOR.MINOR.PATCH)
+   ├─ When to bump versions
+   ├─ Tagging releases in Git
+   ├─ Release notes and changelogs
+   ├─ Versioning multiple services
+   ├─ CHANGELOG.md format
+   ├─ Release checklist
+   └─ CommitEd version planning
+
+═══════════════════════════════════════════════════════════════════════════════
+  COMMITED MICROSERVICES
+═══════════════════════════════════════════════════════════════════════════════
+
+Your Project Structure:
+
+committed/
+├─ api-gateway/              (Port 3000)
+│  ├─ Routes requests
+│  ├─ Rate limiting
+│  └─ Authentication middleware
+│
+├─ auth-service/             (Port 3001)
+│  ├─ User signup/login
+│  ├─ JWT token generation
+│  └─ Permission validation
+│
+├─ user-service/             (Port 3002)
+│  ├─ User profiles
+│  ├─ Preferences
+│  └─ Account settings
+│
+├─ project-service/          (Port 3003)
+│  ├─ Project CRUD
+│  ├─ Permissions
+│  └─ Sharing
+│
+├─ notification-service/     (Port 3004)
+│  ├─ Email notifications
+│  ├─ In-app messages
+│  └─ Preferences
+│
+└─ docker-compose.yml
+   └─ Local development with all services
+
+═══════════════════════════════════════════════════════════════════════════════
+  YOUR BRANCH NAMING CONVENTION
+═══════════════════════════════════════════════════════════════════════════════
+
+Format: <type>/<service>/<description>
+
+Types:
+  feature/  - New functionality
+  fix/      - Bug fix
+  docs/     - Documentation
+  refactor/ - Code improvement
+  test/     - Test addition
+
+Services:
+  auth      - Auth Service
+  user      - User Service
+  project   - Project Service
+  notif     - Notification Service
+  api       - API Gateway
+
+Examples:
+  ✅ feature/auth/two-factor-authentication
+  ✅ fix/user/profile-image-validation
+  ✅ docs/api/rate-limiting-docs
+  ✅ refactor/project/database-queries
+  ✅ feature/notif/email-queue
+
+❌ AVOID:
+  ❌ feature/new-auth-stuff (no service)
+  ❌ user-updates (vague, no type)
+  ❌ fix-bug (no service name)
+
+═══════════════════════════════════════════════════════════════════════════════
+  YOUR COMMIT MESSAGE CONVENTION
+═══════════════════════════════════════════════════════════════════════════════
+
+Format: <type>(<service>): <description>
+
+Services: auth, user, project, notif, api
+
+Examples:
+  ✅ feat(auth): add JWT token refresh endpoint
+  ✅ fix(user): validate profile image size
+  ✅ docs(api): update rate limiting documentation
+  ✅ refactor(project): split database queries
+  ✅ test(notif): add email template tests
+
+Your convention shows:
+  • What changed (feat, fix, docs, etc.)
+  • Which service (auth, user, project, etc.)
+  • What specifically (clear description)
+
+═══════════════════════════════════════════════════════════════════════════════
+  YOUR ISSUE MANAGEMENT
+═══════════════════════════════════════════════════════════════════════════════
+
+Create GitHub Issues for all work:
+
+Title Format:
+  [TYPE] Service: Description
+
+Types: FEATURE, BUG, TASK, DOCS, REFACTOR
+
+Examples:
+  ✅ [FEATURE] Auth: Add two-factor authentication
+  ✅ [BUG] User Service: Avatar upload fails
+  ✅ [TASK] API Gateway: Update rate limiting
+  ✅ [DOCS] Project: Document sharing API
+
+Labels (apply multiple):
+  Type:     bug, feature, task, docs, refactor
+  Priority: high-priority, blocked
+  Service:  auth-service, user-service, project-service, notif-service, api-gateway
+  Status:   in-progress, in-review
+
+Workflow:
+  1. Create issue with labels
+  2. Assign to yourself
+  3. Create branch: feature/<service>/<description>
+  4. In PR, write "Closes #42" (links to issue)
+  5. After merge, issue auto-closes
+
+═══════════════════════════════════════════════════════════════════════════════
+  YOUR VERSIONING STRATEGY
+═══════════════════════════════════════════════════════════════════════════════
+
+Each service has independent version (MAJOR.MINOR.PATCH):
+
+Current Stage:
+  0.x.y - Pre-release / Learning phase
+  Goal:  1.0.0 - Production ready
+
+Example Release (CommitEd v1.0.0):
+  auth-service:            v1.0.0  (JWT stable, all auth working)
+  user-service:            v1.0.0  (User management complete)
+  project-service:         v1.0.0  (CRUD & sharing stable)
+  notification-service:    v1.0.0  (Email/in-app notifications working)
+  api-gateway:             v1.0.0  (All routing working)
+
+Release Checklist:
+  [ ] Update version in each service's package.json
+  [ ] Update CHANGELOG.md with all changes
+  [ ] Test all services together locally
+  [ ] Create release branch: release/v1.0.0
+  [ ] Create PR to main
+  [ ] Get review & approval
+  [ ] Merge to main
+  [ ] Tag: git tag -a v1.0.0 -m "Release message"
+  [ ] Push tag: git push origin v1.0.0
+  [ ] Create GitHub Release with notes
+
+═══════════════════════════════════════════════════════════════════════════════
+  YOUR LOCAL DEVELOPMENT SETUP
+═══════════════════════════════════════════════════════════════════════════════
+
+Quick Start:
+
+1. Clone repository:
+   git clone <commited-repo>
+   cd committed
+
+2. Start all services:
+   docker-compose up
+
+3. Services available at:
+   http://localhost:3000      API Gateway
+   http://localhost:3001      Auth Service
+   http://localhost:3002      User Service
+   http://localhost:3003      Project Service
+   http://localhost:3004      Notification Service
+
+4. Test everything works:
+   curl http://localhost:3000/health
+
+Environment Files (.env):
+
+auth-service/.env:
+  PORT=3001
+  DATABASE_URL=postgres://postgres:password@postgres:5432/auth
+  JWT_SECRET=your-secret-key
+
+user-service/.env:
+  PORT=3002
+  DATABASE_URL=postgres://postgres:password@postgres:5432/users
+  AUTH_SERVICE_URL=http://auth-service:3001
+
+project-service/.env:
+  PORT=3003
+  DATABASE_URL=postgres://postgres:password@postgres:5432/projects
+  AUTH_SERVICE_URL=http://auth-service:3001
+  USER_SERVICE_URL=http://user-service:3002
+
+notification-service/.env:
+  PORT=3004
+  AUTH_SERVICE_URL=http://auth-service:3001
+  SMTP_HOST=smtp.gmail.com
+  SMTP_USER=your-email@gmail.com
+  SMTP_PASS=your-password
+
+api-gateway/.env:
+  PORT=3000
+  AUTH_SERVICE_URL=http://auth-service:3001
+  USER_SERVICE_URL=http://user-service:3002
+  PROJECT_SERVICE_URL=http://project-service:3003
+  NOTIF_SERVICE_URL=http://notification-service:3004
+
+═══════════════════════════════════════════════════════════════════════════════
+  YOUR DAILY WORKFLOW FOR COMMITED
+═══════════════════════════════════════════════════════════════════════════════
+
+Morning (Sync with team):
+  1. git checkout dev
+  2. git pull origin dev
+  3. docker-compose up (start all services)
+  4. Check GitHub issues for assigned tasks
+
+Pick a task:
+  1. Find issue on GitHub (e.g., #42)
+  2. Create branch: feature/user/profile-image
+  3. git checkout feature/user/profile-image
+
+Work:
+  1. Make changes in user-service/ folder
+  2. Test locally: docker-compose up (already running)
+  3. Make regular commits: feat(user): add image upload
+  4. git push origin feature/user/profile-image
+
+Create PR:
+  1. Go to GitHub, click "Create Pull Request"
+  2. Base: dev, Compare: feature/user/profile-image
+  3. Title: [FEATURE] User: Add profile image upload
+  4. Description: What, why, testing steps
+  5. Link issue: "Closes #42"
+  6. Request review from teammate
+
+Review Process:
+  1. Teammate reviews code
+  2. If requested changes: make them, push again
+  3. When approved: merge to dev
+  4. Delete your branch
+
+Next Release:
+  1. When ready for production:
+  2. Create release/v1.0.1 branch
+  3. Update version numbers
+  4. Create PR to main
+  5. Merge when approved
+  6. Tag: git tag -a v1.0.1 -m "..."
+
+═══════════════════════════════════════════════════════════════════════════════
+  GUIDE READING PATH FOR COMMITED
+═══════════════════════════════════════════════════════════════════════════════
+
+BEFORE FIRST SPRINT (Today!):
+  1. README.md (15 min) ........................ Overview
+  2. git/01-basics.md (15 min) ................. Git setup
+  3. git/06-microservices-workflow.md (25 min) . CommitEd structure!
+  4. github/01-collaboration-basics.md (20 min) . Your first PR
+  5. github/08-issues-discussions.md (20 min) ... Task management!
+  6. scrum/04-sprint-mechanics.md (20 min) ..... Sprint rhythm
+
+BEFORE MAKING FIRST PR (Day 1-2):
+  7. github/05-project-standards.md (20 min) ... Quality standards
+  8. github/06-quick-reference.md (10 min) .... Bookmark this!
+
+BEFORE FIRST RELEASE (Sprint end):
+  9. github/07-semantic-versioning.md (20 min) Release process!
+
+OPTIONAL (As needed):
+  • git/02-commit-standards.md (improve commits)
+  • git/04-common-mistakes.md (when Git breaks)
+  • github/02-pull-requests.md (code review details)
+  • scrum/05-team-coordination.md (team dynamics)
+
+═══════════════════════════════════════════════════════════════════════════════
+  QUICK REFERENCE FOR COMMITED
+═══════════════════════════════════════════════════════════════════════════════
+
+BRANCH: feature/user/profile-image
+COMMIT: feat(user): add image upload endpoint
+ISSUE LABEL: feature, user-service, high-priority
+PR DESCRIPTION: Closes #42
+SERVICE PORT: 3002 (user-service)
+DOCKER: docker-compose up
+TEST: curl http://localhost:3002/users/profile
+
+═══════════════════════════════════════════════════════════════════════════════
+  TOOLS FOR COMMITED TEAM
+═══════════════════════════════════════════════════════════════════════════════
+
+Version Control:  Git (distributed)
+Repository:       GitHub (CommitEd/commited)
+Collaboration:    GitHub Issues, Discussions, PRs
+Communication:    Slack/Discord, Standups
+Database:         PostgreSQL (per service)
+Message Queue:    Optional (RabbitMQ/Redis)
+Containerization: Docker
+Orchestration:    Docker Compose (local), Kubernetes (production later)
+CI/CD:            GitHub Actions
+Documentation:    Typst, Markdown
+
+═══════════════════════════════════════════════════════════════════════════════
+  WHAT MAKES COMMITED DIFFERENT
+═══════════════════════════════════════════════════════════════════════════════
+
+✅ Microservices Architecture
+   Each service independent, own database, own version
+
+✅ Service-Specific Naming
+   Branches, commits, issues all include service name
+
+✅ Independent Versioning
+   auth-service v1.0.0, user-service v1.0.1, etc.
+
+✅ Clear Coordination
+   Cross-service PRs documented, deployment order clear
+
+✅ Professional Practices
+   Semantic versioning, changelogs, release notes
+
+✅ Team Communication
+   GitHub Issues for work, Discussions for decisions
+
+═══════════════════════════════════════════════════════════════════════════════
+  SUCCESS CRITERIA
+═══════════════════════════════════════════════════════════════════════════════
+
+After first sprint:
+  ✅ Everyone can start CommitEd locally
+  ✅ Created issues on GitHub
+  ✅ Made PR with service-specific naming
+  ✅ Understand microservices structure
+  ✅ Know your service's role
+
+After third sprint:
+  ✅ 100+ commits across services
+  ✅ Complex features merged across services
+  ✅ Comfortable with cross-service coordination
+  ✅ Clear versioning strategy
+  ✅ Ready for production release
+
+End of project:
+  ✅ CommitEd v1.0.0 deployed
+  ✅ All services stable
+  ✅ Professional documentation
+  ✅ Team ready for real jobs
+  ✅ Portfolio-worthy project
+
+═══════════════════════════════════════════════════════════════════════════════
+
+BOOKMARK THESE:
+  ⭐ git/06-microservices-workflow.md (CommitEd structure)
+  ⭐ github/08-issues-discussions.md (task management)
+  ⭐ github/06-quick-reference.md (daily use)
+  ⭐ github/07-semantic-versioning.md (releases)
+
+START WITH:
+  → git/06-microservices-workflow.md
+
+═══════════════════════════════════════════════════════════════════════════════
+
+Good luck building CommitEd! 🚀
+
+You're learning real software engineering used by professional companies.
+These practices will be valuable in your career.
+
+═══════════════════════════════════════════════════════════════════════════════

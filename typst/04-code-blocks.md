@@ -17,7 +17,7 @@ Use `variable_name` for inline code.
 #let x = 5
 #let y = 10
 #(x + y)
-```
+```‌
 ```
 
 Replace `typst` with the language you're using: `python`, `javascript`, `java`, `rust`, `cpp`, `sql`, etc.
@@ -30,7 +30,7 @@ def hello(name):
     print(f"Hello, {name}!")
 
 hello("World")
-```
+```‌
 ```
 
 ### JavaScript Example
@@ -42,7 +42,7 @@ function add(a, b) {
 }
 
 console.log(add(5, 3));
-```
+```‌
 ```
 
 ### SQL Example
@@ -53,7 +53,7 @@ SELECT users.name, COUNT(assignments.id) as task_count
 FROM users
 JOIN assignments ON users.id = assignments.user_id
 GROUP BY users.id;
-```
+```‌
 ```
 
 ## Styled Code Blocks
@@ -87,7 +87,7 @@ const submitAssignment = async (file) => {
   
   return response.json();
 };
-```
+```‌
 ```
 
 ## Line Numbers

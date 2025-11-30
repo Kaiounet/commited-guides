@@ -16,7 +16,7 @@ git push origin feature/your-feature-name
 2. Click "Pull requests" tab
 3. Click "New pull request"
 4. Select your branch as "compare" branch
-5. Main should be "base" branch
+5. **`dev` should be "base" branch** (for feature PRs)
 
 ### Step 3: Write Your PR Description
 
@@ -93,6 +93,17 @@ Why are we using this library instead of the built-in option?
 3. **Click "Merge pull request"**
 4. **Delete branch** - Cleanup after merging
 
+### Merging to Main (Release)
+
+When a feature set is ready for production, create a PR from `dev` to `main`:
+
+1. Click "New pull request"
+2. Set **`main`** as base branch and **`dev`** (or a release branch) as compare
+3. Write a release description including all changes and improvements
+4. Request review from the team lead
+5. Merge to main once approved
+6. Follow team release procedures (deployment, tagging, etc.)
+
 ## Best Practices
 
 - **Keep PRs focused**: One feature per PR
@@ -105,10 +116,10 @@ Why are we using this library instead of the built-in option?
 ## Common Issues
 
 ### Merge Conflicts
-If main has changed since you started:
+If dev has changed since you started:
 ```bash
 git fetch origin
-git rebase origin/main
+git rebase origin/dev
 # Resolve conflicts in your editor
 git add .
 git rebase --continue
@@ -120,6 +131,6 @@ GitHub will show a "Update branch" button. Click it, or:
 ```bash
 git checkout feature/your-feature
 git fetch origin
-git merge origin/main
+git merge origin/dev
 git push origin feature/your-feature
 ```

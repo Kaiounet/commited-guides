@@ -63,10 +63,10 @@ docs: update README with setup instructions
 ```
 
 ### Avoid These
-❌ "fixes stuff"
-❌ "updated code"
-❌ "Work in progress - DO NOT MERGE"
-❌ Commit messages longer than 50 chars for subject
+- ❌ "fixes stuff"
+- ❌ "updated code"
+- ❌ "Work in progress - DO NOT MERGE"
+- ❌ Commit messages longer than 50 chars for subject
 
 ## Length Guidelines
 

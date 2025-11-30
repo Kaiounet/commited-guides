@@ -1,0 +1,293 @@
+═══════════════════════════════════════════════════════════════════════════════
+  COMMITED GUIDES - COMPLETE INDEX FOR YOUR TEAM
+═══════════════════════════════════════════════════════════════════════════════
+
+All guides are written from a SOFTWARE ARCHITECT's perspective.
+Each guide is something you'll actually use while building your project.
+
+═══════════════════════════════════════════════════════════════════════════════
+  START HERE (2-3 hours to get productive)
+═══════════════════════════════════════════════════════════════════════════════
+
+1. README.md (5 min)
+   → Your orientation guide
+   → Branch strategy explained
+   → Daily workflow overview
+   → Quick reference table
+
+2. git/01-basics.md (15 min)
+   → Git commands you'll use
+   → Clone, branch, commit, push, pull
+   → Basic workflow
+
+3. github/01-collaboration-basics.md (20 min)
+   → Your first day on GitHub
+   → How to set up locally
+   → First branch creation
+
+4. github/05-project-standards.md (20 min)
+   → Team standards for quality
+   → Code review expectations
+   → Definition of Done
+   → PR checklist
+
+5. scrum/04-sprint-mechanics.md (20 min)
+   → How sprints actually work
+   → Standups, reviews, retrospectives
+   → Story points
+
+6. [ACTION] Make your first commit and PR
+
+7. Bookmark github/06-quick-reference.md
+   → Daily commands cheat sheet
+   → Templates you'll use
+   → Common scenarios
+
+═══════════════════════════════════════════════════════════════════════════════
+  GIT GUIDES (For version control)
+═══════════════════════════════════════════════════════════════════════════════
+
+01-basics.md
+  When: Day 1
+  Read if: You're new to Git
+  Learn: Commands, branching, pushing, pulling
+  Use: Daily
+
+02-commit-standards.md
+  When: Day 1 afternoon
+  Read if: Want to write professional commits
+  Learn: Commit message format, best practices
+  Use: Before every commit
+
+03-branching.md
+  When: Day 1-2
+  Read if: Understanding branch strategy matters to you
+  Learn: main/dev/feature workflow, rebasing, merging
+  Use: Reference while working
+
+04-common-mistakes.md
+  When: When things break (they will!)
+  Read if: Git is confusing or broken
+  Learn: How to undo commits, fix conflicts, recover work
+  Use: Whenever you're stuck
+
+05-team-workflow.md
+  When: Throughout project
+  Read if: Want to understand team patterns
+  Learn: Daily patterns, parallel development, handling feedback
+  Use: Reference during sprint
+
+═══════════════════════════════════════════════════════════════════════════════
+  GITHUB GUIDES (For collaboration)
+═══════════════════════════════════════════════════════════════════════════════
+
+01-collaboration-basics.md
+  When: Day 1
+  Read if: First time on GitHub as a team member
+  Learn: Cloning, creating branches, opening PRs
+  Use: Once to set up
+
+02-pull-requests.md
+  When: Day 2
+  Read if: Need to understand code review process
+  Learn: PR workflow, how to review, how to handle feedback
+  Use: Before/after creating PRs
+
+03-forking.md
+  When: Optional bonus
+  Read if: Interested in open source contribution
+  Learn: Fork workflow, upstream tracking
+  Use: If contributing to external projects
+
+04-academic-workflow.md
+  When: Ongoing throughout sprint
+  Read if: Managing issues and planning work
+  Learn: Issue creation, labels, PR etiquette
+  Use: When organizing work
+
+05-project-standards.md
+  When: Day 1 (important!)
+  Read if: Want to understand team quality standards
+  Learn: Code quality, review expectations, done criteria
+  Use: Before submitting PRs
+
+06-quick-reference.md ★ BOOKMARK THIS
+  When: Constantly, throughout project
+  Read if: Need quick help with commands
+  Learn: Command cheat sheet, PR checklist, templates
+  Use: Multiple times daily
+
+═══════════════════════════════════════════════════════════════════════════════
+  SCRUM GUIDES (For project management)
+═══════════════════════════════════════════════════════════════════════════════
+
+01-sprints.md
+  When: Before first sprint
+  Read if: New to Scrum/Agile
+  Learn: Sprint basics, cycles, what they're for
+  Use: Orientation
+
+02-user-stories.md
+  When: When creating/reading issues
+  Read if: Need to understand how to write user stories
+  Learn: User story format, acceptance criteria
+  Use: Writing issues in GitHub
+
+03-backlog.md
+  When: Understanding project scope
+  Read if: Curious about backlog management
+  Learn: How backlog is organized, prioritization
+  Use: Reference during planning
+
+04-sprint-mechanics.md ★ READ EARLY
+  When: Before first sprint (important!)
+  Read if: Need to understand sprints in detail
+  Learn: Planning, standups, reviews, retrospectives
+  Use: Throughout every sprint
+
+05-team-coordination.md
+  When: Throughout project, as needed
+  Read if: Communication or team issues arise
+  Learn: Communication channels, conflict resolution, team culture
+  Use: When navigating team dynamics
+
+═══════════════════════════════════════════════════════════════════════════════
+  TYPST GUIDES (For documentation)
+═══════════════════════════════════════════════════════════════════════════════
+
+01-basics.md through 06-structure.md
+  When: When you need to write documentation
+  Read if: Adding documentation to the project
+  Learn: Typst syntax, formatting, structure
+  Use: Whenever documenting
+
+07-technical-docs.typ
+  When: When documenting architecture or API
+  Read if: Need to write professional technical documentation
+  Learn: How to structure docs, include code, create diagrams
+  Use: When doing major documentation
+
+═══════════════════════════════════════════════════════════════════════════════
+  SUGGESTED READING ORDER BY SPRINT
+═══════════════════════════════════════════════════════════════════════════════
+
+SPRINT 1 (First sprint):
+  REQUIRED:
+    1. README.md
+    2. git/01-basics.md
+    3. github/01-collaboration-basics.md
+    4. github/05-project-standards.md
+    5. scrum/04-sprint-mechanics.md
+
+  OPTIONAL:
+    - git/02-commit-standards.md (improve quality)
+    - github/06-quick-reference.md (bookmark!)
+
+SPRINT 2:
+  IMPORTANT:
+    - github/04-academic-workflow.md (managing issues)
+    - scrum/05-team-coordination.md (team communication)
+
+  REFERENCE:
+    - git/04-common-mistakes.md (if stuck)
+    - github/02-pull-requests.md (if confused about reviews)
+
+SPRINT 3+:
+  USE AS REFERENCE:
+    - Any guide that applies to current task
+    - github/06-quick-reference.md constantly
+    - typst/07-technical-docs.typ (if documenting)
+
+═══════════════════════════════════════════════════════════════════════════════
+  USAGE PATTERNS
+═══════════════════════════════════════════════════════════════════════════════
+
+EVERY MORNING:
+  → README.md (workflow reminder)
+  → git/01-basics.md (if needed)
+
+BEFORE CREATING PR:
+  → github/05-project-standards.md (check definition of done)
+  → github/06-quick-reference.md (PR checklist)
+
+REVIEWING TEAMMATES' CODE:
+  → github/02-pull-requests.md (what to look for)
+
+DAILY STANDUP:
+  → scrum/04-sprint-mechanics.md (format reminder)
+
+WHEN STUCK:
+  → git/04-common-mistakes.md (Git problems)
+  → github/06-quick-reference.md (any problems)
+  → scrum/05-team-coordination.md (team issues)
+
+DOCUMENTING:
+  → typst/07-technical-docs.typ (structure)
+  → typst/01-06-*.md (syntax details)
+
+═══════════════════════════════════════════════════════════════════════════════
+  QUICK ANSWERS TO COMMON QUESTIONS
+═══════════════════════════════════════════════════════════════════════════════
+
+Q: How do I start?
+A: → README.md then git/01-basics.md
+
+Q: My commit is wrong
+A: → git/02-commit-standards.md then git/04-common-mistakes.md
+
+Q: How do I review code?
+A: → github/02-pull-requests.md
+
+Q: I don't know what to work on
+A: → github/04-academic-workflow.md (issues explained)
+
+Q: What's due this sprint?
+A: → scrum/04-sprint-mechanics.md (planning explained)
+
+Q: Git is broken
+A: → git/04-common-mistakes.md
+
+Q: Need a command fast
+A: → github/06-quick-reference.md
+
+Q: How do we communicate?
+A: → scrum/05-team-coordination.md
+
+Q: Writing documentation
+A: → typst/07-technical-docs.typ
+
+═══════════════════════════════════════════════════════════════════════════════
+  KEY FILES TO BOOKMARK
+═══════════════════════════════════════════════════════════════════════════════
+
+★★★ MOST IMPORTANT:
+  → github/06-quick-reference.md (use daily)
+  → scrum/04-sprint-mechanics.md (sprint rhythm)
+
+★★ VERY USEFUL:
+  → README.md (orientation)
+  → git/04-common-mistakes.md (when stuck)
+  → github/05-project-standards.md (quality standards)
+
+★ GOOD TO KNOW:
+  → scrum/05-team-coordination.md (communication)
+  → typst/07-technical-docs.typ (documentation)
+
+═══════════════════════════════════════════════════════════════════════════════
+  THIS IS YOUR TEAM'S PROFESSIONAL FRAMEWORK
+═══════════════════════════════════════════════════════════════════════════════
+
+Every guide is written with the assumption that:
+
+✓ You're learning professional software engineering
+✓ You'll use these practices at your first job
+✓ Quality matters
+✓ Communication matters
+✓ The process matters
+✓ Everyone on the team is important
+
+These guides teach real practices used by professional companies.
+
+Good luck! 🚀
+
+═══════════════════════════════════════════════════════════════════════════════
