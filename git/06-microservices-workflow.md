@@ -1,10 +1,16 @@
 # Microservices Development Workflow
 
+## ⚠️ Important: Services are Examples
+
+The services shown below (auth, user, etc.) are **EXAMPLES** of what your microservices architecture might look like. Your actual services may be different. These guides use these names for consistency and clarity.
+
+**Replace these with your actual service names** when implementing.
+
 ## CommitEd Architecture
 
-CommitEd uses **microservices**: Instead of one big application, you have multiple small, independent services that work together.
+CommitEd uses **microservices**: Instead of one big application, you have multiple small, independent services that work together. **Each service is a separate GitHub repository.**
 
-### CommitEd Services (Example)
+### CommitEd Services (Example - Replace with Your Services)
 
 ```
 api-gateway/
@@ -51,46 +57,41 @@ But it means:
 
 ## Repository Structure
 
-### Option 1: Monorepo (Recommended for CommitEd)
+### Structure: Separate Repository Per Service
 
-One repository with all services:
+Each service is its own GitHub repository:
 
 ```
-committed/
-├─ README.md (overall project guide)
-├─ docker-compose.yml (local development)
-├─ .github/
-│  └─ workflows/ (shared CI/CD)
-│
-├─ api-gateway/
-│  ├─ src/
-│  ├─ tests/
-│  ├─ Dockerfile
-│  ├─ package.json
-│  └─ README.md (service-specific)
-│
-├─ auth-service/
+CommitEd/
+├─ CommitEd-auth-service           (its own repo)
 │  ├─ src/
 │  ├─ tests/
 │  ├─ Dockerfile
 │  ├─ package.json
 │  └─ README.md
 │
-├─ user-service/
+├─ CommitEd-user-service           (its own repo)
 │  ├─ src/
 │  ├─ tests/
 │  ├─ Dockerfile
 │  ├─ package.json
 │  └─ README.md
 │
-├─ project-service/
+├─ CommitEd-project-service        (its own repo)
 │  ├─ src/
 │  ├─ tests/
 │  ├─ Dockerfile
 │  ├─ package.json
 │  └─ README.md
 │
-└─ notification-service/
+├─ CommitEd-notification-service   (its own repo)
+│  ├─ src/
+│  ├─ tests/
+│  ├─ Dockerfile
+│  ├─ package.json
+│  └─ README.md
+│
+└─ CommitEd-api-gateway            (its own repo)
    ├─ src/
    ├─ tests/
    ├─ Dockerfile
@@ -98,39 +99,47 @@ committed/
    └─ README.md
 ```
 
-**Pros:**
-- Easy to see all code together
-- Shared dependencies simpler
-- One git history
-- Good for learning/small teams
+**Why separate repos?**
+- Each service can be developed independently
+- Each service has its own CI/CD pipeline
+- Each service can be deployed separately
+- Different teams can work on different services
+- Easier to manage dependencies and versions
 
-**Cons:**
-- Can be large
-- All services must be checked out
-
-### Option 2: Separate Repositories
-
-Each service is its own repo:
-
-```
-committed-auth-service/
-committed-user-service/
-committed-project-service/
-committed-notification-service/
-committed-api-gateway/
+**How to manage multiple repos:**
+```bash
+# You'll need to clone each service individually
+git clone https://github.com/YourOrg/CommitEd-auth-service
+git clone https://github.com/YourOrg/CommitEd-user-service
+git clone https://github.com/YourOrg/CommitEd-project-service
+git clone https://github.com/YourOrg/CommitEd-notification-service
+git clone https://github.com/YourOrg/CommitEd-api-gateway
 ```
 
-**Pros:**
-- Smaller repos
-- Independent deployments
-- Easier scaling
+### Previous Option: Monorepo (Reference Only)
 
-**Cons:**
-- Need to clone multiple repos
-- Version coordination harder
-- More complex CI/CD
+If you ever want to use a monorepo structure, it looks like:
 
-**For CommitEd (recommendation):** Use monorepo initially, convert to separate repos if team grows.
+```
+committed/
+├─ README.md
+├─ docker-compose.yml
+├─ .github/
+│  └─ workflows/
+│
+├─ api-gateway/
+│  ├─ src/
+│  ├─ tests/
+│  ├─ package.json
+│  └─ README.md
+│
+├─ auth-service/
+├─ user-service/
+├─ project-service/
+└─ notification-service/
+```
+
+**Note:** CommitEd uses **separate repos per service**, not monorepo.
 
 ## Branch Naming for Microservices
 
@@ -182,15 +191,24 @@ feature/notif/email-queue
 
 ## Commit Messages for Microservices
 
+Even though each service is in a separate repository, use the service name in your commits for consistency across the project.
+
 Include the service in your commits:
 
 ```bash
 git commit -m "feat(auth): add JWT token refresh endpoint"
-git commit -m "fix(user-service): profile image upload validation"
+git commit -m "fix(user): profile image upload validation"
 git commit -m "docs(api-gateway): update rate limit documentation"
 ```
 
-**Scope format:** `(service-name)`
+**Scope format:** `(service-name)` - use your actual service names
+
+**Examples (replace with your service names):**
+```bash
+git commit -m "feat(auth-service): implement OAuth2"
+git commit -m "fix(user-service): fix avatar upload"
+git commit -m "docs(api-gateway): add authentication guide"
+```
 
 ## Pull Requests in Microservices
 
@@ -255,11 +273,28 @@ PR #95 adds the new JWT validation endpoint.
 Do not merge this until auth-service is live!
 ```
 
-## Development: Running Everything Locally
+## Development: Running Services Locally
 
-### With Docker Compose
+### With Separate Repositories
 
-Create `docker-compose.yml` in root:
+Since each service is its own repo, you'll clone them separately:
+
+```bash
+# Create a parent directory
+mkdir CommitEd-Development
+cd CommitEd-Development
+
+# Clone each service
+git clone https://github.com/YourOrg/CommitEd-auth-service
+git clone https://github.com/YourOrg/CommitEd-user-service
+git clone https://github.com/YourOrg/CommitEd-project-service
+git clone https://github.com/YourOrg/CommitEd-notification-service
+git clone https://github.com/YourOrg/CommitEd-api-gateway
+```
+
+### Running All Services Locally
+
+Create a `docker-compose.yml` file **in the parent directory** (CommitEd-Development/):
 
 ```yaml
 version: '3.8'
@@ -273,7 +308,7 @@ services:
       - "5432:5432"
 
   auth-service:
-    build: ./auth-service
+    build: ./CommitEd-auth-service
     ports:
       - "3001:3000"
     environment:
@@ -282,7 +317,7 @@ services:
       - postgres
 
   user-service:
-    build: ./user-service
+    build: ./CommitEd-user-service
     ports:
       - "3002:3000"
     environment:
@@ -293,7 +328,7 @@ services:
       - auth-service
 
   project-service:
-    build: ./project-service
+    build: ./CommitEd-project-service
     ports:
       - "3003:3000"
     environment:
@@ -304,7 +339,7 @@ services:
       - auth-service
 
   api-gateway:
-    build: ./api-gateway
+    build: ./CommitEd-api-gateway
     ports:
       - "3000:3000"
     environment:
@@ -319,6 +354,7 @@ services:
 
 **Start everything:**
 ```bash
+# In CommitEd-Development/ directory
 docker-compose up
 ```
 
@@ -327,40 +363,40 @@ docker-compose up
 docker-compose down
 ```
 
-### Local Development
+### Alternative: Run Services Individually
 
-For faster development, run services individually:
+For faster development, run services directly without Docker:
 
 ```bash
 # Terminal 1: Auth service
-cd auth-service
+cd CommitEd-auth-service
 npm install
 npm run dev          # Runs on :3001
 
 # Terminal 2: User service
-cd user-service
+cd CommitEd-user-service
 npm install
 npm run dev          # Runs on :3002
 
 # Terminal 3: API Gateway
-cd api-gateway
+cd CommitEd-api-gateway
 npm install
 npm run dev          # Runs on :3000
 ```
 
-Environment variables in `.env`:
+Create `.env` files in each service repo:
 
 ```
-# auth-service/.env
+# CommitEd-auth-service/.env
 PORT=3001
 DATABASE_URL=postgres://localhost/auth
 
-# user-service/.env
+# CommitEd-user-service/.env
 PORT=3002
 DATABASE_URL=postgres://localhost/users
 AUTH_SERVICE_URL=http://localhost:3001
 
-# api-gateway/.env
+# CommitEd-api-gateway/.env
 PORT=3000
 AUTH_SERVICE_URL=http://localhost:3001
 USER_SERVICE_URL=http://localhost:3002

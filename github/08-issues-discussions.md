@@ -360,10 +360,13 @@ Types: FEATURE, BUG, TASK, DOCS, REFACTOR, HOTFIX
 
 ### Labels for Microservices
 
-Since CommitEd uses microservices, add service labels:
+Since CommitEd uses microservices (each in separate repositories), add service labels.
+
+**Note:** The service names below (auth-service, user-service, etc.) are EXAMPLES.
+Replace them with your actual service names.
 
 ```
-🏷️ Services:
+Services (EXAMPLES - replace with your actual service names):
 - auth-service
 - user-service
 - project-service
@@ -377,24 +380,25 @@ Labels: bug, high-priority, user-service
 
 ### Issue Naming for Services
 
-Include service in title:
+Include service in title (use your actual service names):
 
 ```
-✅ [FEATURE] Auth: Add two-factor authentication
-✅ [BUG] User Service: Profile image upload fails
-✅ [TASK] API Gateway: Update rate limiting
+Examples (replace service names with your actual services):
+- [FEATURE] Auth: Add two-factor authentication
+- [BUG] User Service: Profile image upload fails
+- [TASK] API Gateway: Update rate limiting
 
 This makes it clear which service is affected
 ```
 
 ### Cross-Service Issues
 
-For work spanning multiple services:
+For work spanning multiple services (use your actual service names):
 
 ```markdown
 Title: [TASK] Implement service-to-service authentication
 
-## Services Affected
+## Services Affected (Examples - replace with your services)
 - [ ] auth-service (provide JWT validation)
 - [ ] user-service (consume auth tokens)
 - [ ] project-service (consume auth tokens)

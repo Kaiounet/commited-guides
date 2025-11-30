@@ -119,19 +119,21 @@ For CommitEd (our project):
 
 ## Coordinating Versions Across Microservices
 
-Since CommitEd uses microservices, each service can have its own version!
+Since CommitEd uses microservices (each in separate repository), each service can have its own version!
 
-### Approach 1: Independent Versioning (Recommended for you)
+### Approach 1: Independent Versioning (CommitEd Uses This)
 
 Each microservice versions independently:
 
 ```
 CommitEd main project:  v1.0.0
-├─ auth-service:       v1.2.0
+├─ auth-service:       v1.2.0       (Example services - use yours)
 ├─ user-service:       v1.0.1
 ├─ project-service:    v1.1.0
 └─ notification-service: v1.0.0
 ```
+
+**Note:** Service names are EXAMPLES. Replace with your actual service names.
 
 **Pros:**
 - Services evolve at their own pace
@@ -144,17 +146,19 @@ CommitEd main project:  v1.0.0
 
 **Your approach:** Each service has own `main` branch and tags
 
-### Approach 2: Monorepo Versioning (Simpler)
+### Approach 2: Monorepo Versioning (Reference Only)
 
-One version for everything:
+One version for everything (CommitEd does NOT use this):
 
 ```
 CommitEd v1.0.0
-├─ auth-service:       (included)
+├─ auth-service:       (included)  (Example services)
 ├─ user-service:       (included)
 ├─ project-service:    (included)
 └─ notification-service: (included)
 ```
+
+**Note:** This is reference only. CommitEd uses separate repos.
 
 **Pros:**
 - Simple to understand
